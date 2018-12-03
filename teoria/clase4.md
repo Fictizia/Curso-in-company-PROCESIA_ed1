@@ -1812,7 +1812,21 @@ fetch('https://davidwalsh.name/submit', {
 **1 -** Sacar en el html los [datos de polen](http://airemad.com/api/v1/pollen).
 
 ```javascript
-    // Tu solución
+	var markdown = "# Cursos de Fictizia en el Área de Desarrollo interactivo y Web\n\n";
+	
+	var cursos = document.querySelectorAll('.plan');
+
+	
+	for (var i = 0; cursos.length > i; i++) {
+		
+		var curso = cursos[i];
+		var horas = curso.querySelector(".mainTag").innerText;
+		var titulo = curso.querySelector("a").innerText
+		var link = curso.querySelector("a").href
+		markdown +=  "- [" + titulo + " (" + horas + ")](" + link + ")\n";
+	}
+	
+	console.log(markdown);
 ```
 
 **2 -** Sacar en el html el tiempo meteorológico de Madrid, Barcelona y Valencia. 
