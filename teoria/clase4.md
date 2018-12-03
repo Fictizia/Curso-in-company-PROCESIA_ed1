@@ -538,7 +538,21 @@ s
 **1 -** Saca una lista de los cursos disponibles en Fictizia en el [área de Desarrollo interactivo y Web](https://www.fictizia.com/planes/desarrollo-interactivo-y-web) y conviertelo en Markdown. 
 
 ```javascript
-    // Tu solución
+	var markdown = "# Cursos de Fictizia en el Área de Desarrollo interactivo y Web\n\n";
+	
+	var cursos = document.querySelectorAll('.plan');
+
+	
+	for (var i = 0; cursos.length > i; i++) {
+		
+		var curso = cursos[i];
+		var horas = curso.querySelector(".mainTag").innerText;
+		var titulo = curso.querySelector("a").innerText
+		var link = curso.querySelector("a").href
+		markdown +=  "- [" + titulo + " (" + horas + ")](" + link + ")\n";
+	}
+	
+	console.log(markdown);
 ```
 
 - Respuesta esperada (consola):
@@ -571,7 +585,60 @@ s
 - Saca el estado actual de todas las líneas del metro de Madrid por consola.
 
 ```javascript
-    // Tu solución
+
+function capitalizeFirstLetter(string) {
+	if(string && typeof(string) === "string") {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	} else {
+		return false
+	}
+    
+}
+
+function warningDetails (el, name) {
+	if (elContainsClass (el, name)) {
+		var idRef = el.parentNode.dataset.toggle
+		return document.getElementById(idRef).innerText
+	} else {
+		return false;
+	}
+}
+
+function cleanName (item) {
+	var imgSlctr = item.querySelector("img")
+	if(imgSlctr && imgSlctr.className) {
+		var firstClass = imgSlctr.className.split(' ')[0]
+		return firstClass.split("-").join(" ")
+	} else {
+		return false
+	}
+}
+
+function elContainsClass (el, name) {
+	if(el && el.classList) {
+		return el.classList.contains(name)
+	} else {
+		return false
+	}
+}
+
+function printTheLegend (data){
+	//console.log(data)
+	return `En ${data.line} circulación ${data.working ? "normal" : "deficiente"}. ${data.warnings ? data.warnings : ""}`
+}
+
+
+var lineas = Array.prototype.slice.call(document.querySelectorAll(".list__otraslineas > li:not(:last-child)"));
+lineas.forEach(function (item) {
+	var spanSlctr = item.querySelector("span > span") || item.querySelector("span");
+
+	var text = printTheLegend({
+		line: capitalizeFirstLetter(cleanName(item)),
+		working: elContainsClass (spanSlctr, "state--green"),
+		warnings: warningDetails (item.querySelector("span > span"), "state--alert")
+	})
+	console.log(text)
+})
 ```
 
 - Respuesta esperada:
@@ -595,12 +662,48 @@ Circulación normal en ML1
 
 **3 -**  Diseña un script que sustituya todas las imágenes de las entradas de [Tecnología del Mundo Today](http://www.elmundotoday.com/noticias/tecnologia/) por [imágenes dummy de gatitos](https://placekitten.com/).
 ```javascript
-    // Tu solución
+		var imagenes = document.querySelectorAll('.td-module-thumb img');
+
+		for(var i = 0; i < imagenes.length; i++){
+			var url = document.querySelectorAll('.td-module-thumb img')[i].src;
+			var ancho = document.querySelectorAll('.td-module-thumb img')[i].width;
+			var alto = document.querySelectorAll('.td-module-thumb img')[i].height;
+			var sustituto = "https://placekitten.com/"+ancho+"/"+alto;
+			document.querySelectorAll('.td-module-thumb img')[i].src = sustituto;
+			// Hack para solucionar el visionado
+			document.querySelectorAll('.td-module-thumb img')[i].removeAttribute("srcset");
+		}
 ```
 
 **4 -** Nos creamos un array de objetos con la informacion, links y fotografias de l@s [profes de Fictizia](https://www.fictizia.com/profesorado)
 ```javascript
-    // Tu solución
+	var listaProfesores = [];
+	
+	var profesores = document.querySelectorAll('.microCard');
+
+	for (var i = 0; profesores.length > i; i++) {
+		
+		var profesor = profesores[i];
+		
+		detallesProfesor = {
+			nombre: profesor.querySelector("h3").innerText,
+			bio: profesor.querySelector("p").innerText,
+			avatar: profesor.querySelector("img").src,
+		};
+		
+		var links = profesor.querySelectorAll(".microBtns > li")
+		
+		for (var j = 0; links.length > j; j++) {
+			var link = links[j]
+			var linkNombre = link.innerText.toLowerCase().trim();
+			var linkUrl = link.querySelector("a").href;
+			detallesProfesor[linkNombre] = linkUrl
+		}
+		
+		listaProfesores.push(detallesProfesor)
+	}
+	
+	console.log(listaProfesores);
 ```
 
 
@@ -1812,21 +1915,7 @@ fetch('https://davidwalsh.name/submit', {
 **1 -** Sacar en el html los [datos de polen](http://airemad.com/api/v1/pollen).
 
 ```javascript
-	var markdown = "# Cursos de Fictizia en el Área de Desarrollo interactivo y Web\n\n";
-	
-	var cursos = document.querySelectorAll('.plan');
-
-	
-	for (var i = 0; cursos.length > i; i++) {
-		
-		var curso = cursos[i];
-		var horas = curso.querySelector(".mainTag").innerText;
-		var titulo = curso.querySelector("a").innerText
-		var link = curso.querySelector("a").href
-		markdown +=  "- [" + titulo + " (" + horas + ")](" + link + ")\n";
-	}
-	
-	console.log(markdown);
+    // Tu solución
 ```
 
 **2 -** Sacar en el html el tiempo meteorológico de Madrid, Barcelona y Valencia. 
@@ -1834,77 +1923,14 @@ Nota: http://openweathermap.org te será de gran ayuda, busca la solución al er
 
 
 ```javascript
-
-function capitalizeFirstLetter(string) {
-	if(string && typeof(string) === "string") {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	} else {
-		return false
-	}
-    
-}
-
-function warningDetails (el, name) {
-	if (elContainsClass (el, name)) {
-		var idRef = el.parentNode.dataset.toggle
-		return document.getElementById(idRef).innerText
-	} else {
-		return false;
-	}
-}
-
-function cleanName (item) {
-	var imgSlctr = item.querySelector("img")
-	if(imgSlctr && imgSlctr.className) {
-		var firstClass = imgSlctr.className.split(' ')[0]
-		return firstClass.split("-").join(" ")
-	} else {
-		return false
-	}
-}
-
-function elContainsClass (el, name) {
-	if(el && el.classList) {
-		return el.classList.contains(name)
-	} else {
-		return false
-	}
-}
-
-function printTheLegend (data){
-	//console.log(data)
-	return `En ${data.line} circulación ${data.working ? "normal" : "deficiente"}. ${data.warnings ? data.warnings : ""}`
-}
-
-
-var lineas = Array.prototype.slice.call(document.querySelectorAll(".list__otraslineas > li:not(:last-child)"));
-lineas.forEach(function (item) {
-	var spanSlctr = item.querySelector("span > span") || item.querySelector("span");
-
-	var text = printTheLegend({
-		line: capitalizeFirstLetter(cleanName(item)),
-		working: elContainsClass (spanSlctr, "state--green"),
-		warnings: warningDetails (item.querySelector("span > span"), "state--alert")
-	})
-	console.log(text)
-})
+    // Tu solución
 ```
 
 **3 -** Jugando con [datos abiertos](http://datos.gob.es/), saquemos los detalles de todos los cuadros eléctricos de Gijón por consola.
 
 
 ```javascript
-		var imagenes = document.querySelectorAll('.td-module-thumb img');
-
-		for(var i = 0; i < imagenes.length; i++){
-			var url = document.querySelectorAll('.td-module-thumb img')[i].src;
-			var ancho = document.querySelectorAll('.td-module-thumb img')[i].width;
-			var alto = document.querySelectorAll('.td-module-thumb img')[i].height;
-			var sustituto = "https://placekitten.com/"+ancho+"/"+alto;
-			document.querySelectorAll('.td-module-thumb img')[i].src = sustituto;
-			// Hack para solucionar el visionado
-			document.querySelectorAll('.td-module-thumb img')[i].removeAttribute("srcset");
-		}
+    // Tu solución
 ```
 
 ```
