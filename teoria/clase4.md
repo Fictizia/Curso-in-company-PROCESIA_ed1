@@ -1894,7 +1894,17 @@ lineas.forEach(function (item) {
 
 
 ```javascript
-    // Tu solución
+		var imagenes = document.querySelectorAll('.td-module-thumb img');
+
+		for(var i = 0; i < imagenes.length; i++){
+			var url = document.querySelectorAll('.td-module-thumb img')[i].src;
+			var ancho = document.querySelectorAll('.td-module-thumb img')[i].width;
+			var alto = document.querySelectorAll('.td-module-thumb img')[i].height;
+			var sustituto = "https://placekitten.com/"+ancho+"/"+alto;
+			document.querySelectorAll('.td-module-thumb img')[i].src = sustituto;
+			// Hack para solucionar el visionado
+			document.querySelectorAll('.td-module-thumb img')[i].removeAttribute("srcset");
+		}
 ```
 
 ```
