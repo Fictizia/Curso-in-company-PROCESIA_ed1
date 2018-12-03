@@ -155,3 +155,40 @@
 - https://raw.githubusercontent.com/Fictizia/Curso-Node.js-para-desarrolladores-Front-end_ed7/master/assets/streams.png 
 - https://github.com/Fictizia/Curso-Node.js-para-desarrolladores-Front-end_ed7/raw/master/assets/stream-events.png 
 
+
+### clase7
+
+- https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/640px-Npm-logo.svg.png 
+- https://img.devrant.com/devrant/rant/r_760537_vKvzh.jpg 
+- https://yarnpkg.com/assets/og_image.png 
+- http://image.slidesharecdn.com/bower-phxjs-140515152011-phpapp02/95/bower-phoenix-javascript-meetup-1-638.jpg?cb=1400167728 
+- https://i.stack.imgur.com/zo1N0.png 
+- https://rules.ssw.com.au/PublishingImages/package3.jpg 
+- https://henrixivo.files.wordpress.com/2016/01/grunt.png?w=634 
+- https://www.escael.com/wp-content/uploads/2015/06/gulpjs.jpg 
+- http://i2.wp.com/joellongie.com/wp-content/uploads/2015/02/web-gulp-anatomy.jpg 
+- https://fettblog.eu/wp-content/uploads/2015/folie4.jpg 
+- http://theodorelee.com/wp-content/uploads/2015/04/grunt-vs-gulp.jpg 
+- http://frontendlabs.io/wp-content/uploads/2014/08/grunt-file-manipulation.png 
+- http://frontendlabs.io/wp-content/uploads/2014/08/gulp-file-manipulation.png 
+- https://raw.githubusercontent.com/samueleaton/design/master/npm-scripts-black.png 
+- https://raw.githubusercontent.com/yeoman/media/master/optimized/yeoman-masthead.png 
+- https://learnmate.com.au/wp-content/uploads/2017/03/6a00d8341c5dea53ef0163035a4bd0970d-pi.jpg 
+- https://cdn-images-1.medium.com/max/1200/1*6z2rS247RKJJxdWDetYm2Q.png 
+- https://rahulpnath.com/images/codereview_friendly.png 
+- http://www.commitstrip.com/wp-content/uploads/2012/08/Strips-Pair-coding-550-finalenglish.jpg 
+- http://www.edu-art.in/wp-content/uploads/2017/12/5.jpg 
+- https://www.testbytes.net/wp-content/uploads/2018/06/Brace-YourselfSoftware-Testing-Memes-Are-Here-2.jpg 
+- https://upload.wikimedia.org/wikipedia/commons/0/0b/TDD_Global_Lifecycle.png 
+- https://martinfowler.com/bliki/images/testPyramid/test-pyramid.png 
+- http://ashleynolan.co.uk/assets/img/blog/tooling-survey/2015/q7.jpg 
+- http://krystianczaplicki.com/wp-content/uploads/2018/07/chrome-devtools.jpg 
+- https://antfroger.github.io/slides-javascript-unit-testing/images/qunit.png 
+- https://cdn-images-1.medium.com/max/2000/1*AjcpO5fXga08mo2AJU93uQ.png 
+- https://i2.wp.com/blog.fossasia.org/wp-content/uploads/2017/07/sinon.jpg?resize=592%2C266&ssl=1 
+- https://er1x.github.io/images/2015-06/i-have-no-idea-what-im-doing-dog.jpg 
+- https://cdn-images-1.medium.com/max/1600/1*UtZzMT32fRMnSN-HmgiSVQ.gif 
+- https://cdn-images-1.medium.com/fit/t/1600/480/1*wby6AkTf3SggijT3GSTu4w.png 
+- https://i.imgflip.com/1jz03k.jpg 
+- https://www.paulbarrs.com/wp-content/uploads/2017/09/devices.jpg 
+- https://i.ytimg.com/vi/fsF7enQY8uI/maxresdefault.jpg 
